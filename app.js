@@ -101,10 +101,10 @@
       ],
       ramps: [
         {
-          label: "RAMPA NEUTRA ANTI-ROXO (R=G=B • 0% → 100%)",
+          label: "RAMPA NEUTRA 100% P&B (R=G=B • 0% → 100% — Apenas Preto, Cinza e Branco Puro)",
           startRgb: [0, 0, 0],
           endRgb: [255, 255, 255],
-          note: "Se esta rampa esfriar ou ficar roxa ao mexer no Azul, clique em '⚡ Mudar Linha'",
+          note: "Se surgirem faixas esverdeadas ou roxas na rampa do monitor, clique em '🧼 Purificar Cinza (100% P&B)' na Estação",
         },
       ],
     },
@@ -201,9 +201,9 @@
     {
       id: "final_sombra",
       tabLabel: "4. Final + Sombra",
-      title: "4. Validação Final + Sombra",
+      title: "4. Validação Final + Sombra (100% P&B + Esverdeado / Roxo / Quente / Frio)",
       dotHex: "#FFC041",
-      tip: "Validador final: confira separação de 1%–4% no preto, gama 50%, branco 96%–100% e RGB final.",
+      tip: "A rampa neutra deve ter APENAS tons de preto, cinza e branco puros. Use '🧼 Purificar Cinza (100% P&B)' para limpar ondas e ajuste 'Cinza Esverdeado' ou 'Cinza Roxo / Magenta' no programa.",
       ribbons: [
         { name: "SOMBRA 6% (PRETO PROFUNDO)", rgb: [15, 15, 15], textRgb: [210, 210, 215], note: "Separação anti-Black Crush" },
         { name: "CINZA 25% (ESCURO)", rgb: [64, 64, 64], textRgb: [235, 235, 235], note: "Gama inferior" },
@@ -232,10 +232,10 @@
       ],
       ramps: [
         {
-          label: "RAMPA NEUTRA FINAL • 0% → 100%",
+          label: "RAMPA NEUTRA BASE & GAMA (100% P&B • 0% → 100%)",
           startRgb: [0, 0, 0],
           endRgb: [255, 255, 255],
-          note: "Escala contínua de preto 0% a branco 100%",
+          note: "Deve exibir SOMENTE preto, cinza e branco puros (zero verde / zero roxo)",
         },
       ],
     },
