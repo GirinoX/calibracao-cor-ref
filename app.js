@@ -66,6 +66,49 @@
 
   const STAGES = [
     {
+      id: "sequencia_guiada",
+      tabLabel: "★ Sequência 7 Etapas",
+      title: "★ Sequência Visual Inteligente (7 Etapas no Olho)",
+      dotHex: "#FFC041",
+      tip: "Siga esta ordem exata da Estação: 1.Âncora Neutra (blinda o cinza contra roxo) → 2.Vermelho → 3.Coral → 4.Verde → 5.Oliva → 6.Azul (Convergência) → 7.Sombra Final.",
+      ribbons: [
+        { name: "ETAPA 1/7 • CINZA 50% (ÂNCORA NEUTRA)", rgb: [128, 128, 128], textRgb: [245, 245, 245], note: "Ancora R=G=B primeiro para o cinza JAMAIS ficar roxo" },
+        { name: "ETAPA 1/7 • BRANCO 96% (TOPO NEUTRO)", rgb: [245, 245, 245], textRgb: [20, 20, 20], note: "Contraste neutro sem estourar no 100%" },
+        { name: "ETAPA 2/7 • VERMELHO PURO", rgb: [229, 57, 53], textRgb: [255, 255, 255], note: "Força e saturação principal de R (trava com Carmesim/Tomate)" },
+        { name: "ETAPA 2/7 • CARMESIM ESCURO", rgb: [142, 27, 27], textRgb: [255, 235, 235], note: "Profundidade escura do Vermelho" },
+        { name: "ETAPA 3/7 • CORAL / PELE QUENTE", rgb: [224, 159, 125], textRgb: [25, 18, 15], note: "Meio-tom R+G ajustado sem desconfigurar Vermelho Puro" },
+        { name: "ETAPA 4/7 • VERDE VIVO", rgb: [67, 160, 71], textRgb: [255, 255, 255], note: "Pureza e gama médio de G com R e Cinza blindados" },
+        { name: "ETAPA 4/7 • ESMERALDA ESCURO", rgb: [27, 94, 32], textRgb: [235, 255, 235], note: "Sombra e densidade do canal Verde" },
+        { name: "ETAPA 5/7 • OLIVA NEUTRO (PONTE R=G)", rgb: [158, 157, 36], textRgb: [255, 255, 240], note: "Equilíbrio exato R=158 / G=157 — prepara a convergência do Azul" },
+        { name: "ETAPA 6/7 • AZUL COBALTO (CONVERGÊNCIA)", rgb: [30, 136, 229], textRgb: [255, 255, 255], note: "Limite físico EDID: LG FHD B_y=0.0498 vs Ultrawide B_y=0.0596" },
+        { name: "ETAPA 6/7 • AZUL CÉU", rgb: [79, 195, 247], textRgb: [15, 25, 35], note: "Se não convergir sozinho, use '⚡ Mudar Linha' no programa" },
+        { name: "ETAPA 6/7 • BRANCO GELO", rgb: [215, 228, 242], textRgb: [20, 24, 30], note: "Conferência de ponto branco frio sem puxar cinza p/ violeta" },
+        { name: "ETAPA 7/7 • SOMBRA 6% (CHECK-UP FINAL)", rgb: [15, 15, 15], textRgb: [215, 215, 220], note: "Destrava 1%–4% do preto movendo R, G e B juntos" },
+      ],
+      stepBands: [
+        {
+          title: "ETAPA 1 & 7 — DEGRAUS DE SOMBRA (0% a 20%)",
+          hint: "1% e 2% devem se separar sutilmente do Preto 0% sem tom roxo",
+          colsClass: "steps-11",
+          items: buildNeutralSteps("SOMBRA", SHADOW_PCTS, "Coluna vertebral neutra • Sombra"),
+        },
+        {
+          title: "ETAPA 1 & 7 — ALTAS-LUZES E CONTRASTE (80% a 100%)",
+          hint: "96%–99% devem se distinguir do Branco 100%",
+          colsClass: "steps-11",
+          items: buildNeutralSteps("LUZ", HIGHLIGHT_PCTS, "Coluna vertebral neutra • Altas-luzes"),
+        },
+      ],
+      ramps: [
+        {
+          label: "RAMPA NEUTRA ANTI-ROXO (R=G=B • 0% → 100%)",
+          startRgb: [0, 0, 0],
+          endRgb: [255, 255, 255],
+          note: "Se esta rampa esfriar ou ficar roxa ao mexer no Azul, clique em '⚡ Mudar Linha'",
+        },
+      ],
+    },
+    {
       id: "vermelho",
       tabLabel: "1. Vermelho (R)",
       title: "1. Vermelho (R)",
