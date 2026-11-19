@@ -1,0 +1,18 @@
+{
+  "name": "Referência de Cor • sRGB",
+  "short_name": "Ref Cor sRGB",
+  "description": "Referência móvel em tela cheia das cores sRGB da Estação de Calibração Multi-Monitor",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#12101B",
+  "theme_color": "#563D80",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

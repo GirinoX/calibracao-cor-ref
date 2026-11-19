@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta id="theme-color-meta" name="theme-color" content="#563D80">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Referência de Cor • sRGB</title>
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <h1 class="site-title">REFERÊNCIA DE COR • sRGB</h1>
+        <div class="header-subrow">
+          <span class="badge-amarelo">ESTAÇÃO MÓVEL DE COMPARAÇÃO</span>
+          <p class="header-subtitle">Padrões sRGB idênticos aos monitores para conferir lado a lado no celular</p>
+        </div>
+      </div>
+
+      <aside class="header-status-card" aria-label="Controles de exibição">
+        <div class="status-meta-row">
+          <span class="status-label">ETAPA ATIVA</span>
+          <span id="active-tab-badge" class="status-value">1. Vermelho (R)</span>
+        </div>
+        <div class="header-controls-row">
+          <button type="button" id="btn-wakelock" class="btn-control" aria-pressed="false">
+            ☀ Tela Acesa: OFF
+          </button>
+          <button type="button" id="btn-studio" class="btn-control" aria-pressed="false">
+            ◐ Modo Estúdio: OFF
+          </button>
+        </div>
+        <div id="wakelock-feedback" class="status-hint" aria-live="polite"></div>
+      </aside>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="checklist-card" aria-label="Checklist do celular">
+      <div class="checklist-head">
+        <div class="checklist-title-wrap">
+          <span class="checklist-tag">GUIA RÁPIDO</span>
+          <h2 class="checklist-title">Antes de comparar no celular</h2>
+        </div>
+        <button type="button" id="btn-toggle-checklist" class="btn-sec btn-compact" aria-expanded="true">
+          Ocultar
+        </button>
+      </div>
+      <ol id="checklist-body" class="checklist-list">
+        <li>Desativar <strong>Night Light / Filtro de Luz Azul / True Tone</strong>.</li>
+        <li>Usar perfil de cor da tela do celular em <strong>Natural / sRGB</strong> (evitar modo Vívido).</li>
+        <li>Ajustar o brilho do celular igualando o <strong>Branco 100%</strong> ao monitor antes de comparar cores e sombras.</li>
+      </ol>
+    </section>
+
+    <nav id="tabs-nav" class="tabs-nav" aria-label="Etapas de calibração"></nav>
+
+    <section class="stage-card">
+      <div class="stage-toolbar">
+        <div class="stage-toolbar-info">
+          <h2 id="stage-heading" class="stage-heading">1. Vermelho (R)</h2>
+          <p id="stage-tip" class="stage-tip"></p>
+        </div>
+        <div class="stage-actions">
+          <button type="button" id="btn-stage-fullscreen" class="btn-sec">
+            ⛶ Tela Cheia da Etapa
+          </button>
+          <button type="button" id="btn-carousel-start" class="btn-cta">
+            ▶ Modo Carrossel (1 Cor por Tela)
+          </button>
+        </div>
+      </div>
+
+      <div id="stage-content" class="stage-content"></div>
+    </section>
+  </main>
+
+  <div id="fullscreen-overlay" class="fullscreen-overlay" hidden role="dialog" aria-modal="true" aria-label="Modo tela cheia de referência sRGB">
+    <div id="fs-surface" class="fs-surface">
+      <div id="fs-single-hud" class="fs-single-hud" hidden>
+        <div class="fs-hud-top">
+          <div class="fs-hud-titles">
+            <span id="fs-counter" class="fs-counter">1 / 13</span>
+            <h2 id="fs-name" class="fs-name">VERMELHO PURO</h2>
+            <p id="fs-note" class="fs-note"></p>
+          </div>
+          <button type="button" id="btn-fs-close" class="btn-danger btn-compact" aria-label="Fechar tela cheia">
+            ✕ Fechar
+          </button>
+        </div>
+        <div class="fs-codes-row">
+          <code id="fs-hex" class="fs-code-pill">#E53935</code>
+          <code id="fs-rgb" class="fs-code-pill">RGB(229, 57, 53)</code>
+          <button type="button" id="btn-copy-hex" class="btn-cta btn-compact">Copiar HEX</button>
+        </div>
+        <div class="fs-nav-row">
+          <button type="button" id="btn-fs-prev" class="btn-sec">◀ Anterior</button>
+          <span class="fs-swipe-hint">Toque na cor p/ ocultar • Deslize ◀ ▶</span>
+          <button type="button" id="btn-fs-next" class="btn-cta">Próxima ▶</button>
+        </div>
+      </div>
+
+      <div id="fs-stage-wrap" class="fs-stage-wrap" hidden>
+        <div id="fs-stage-canvas" class="fs-stage-canvas"></div>
+        <div id="fs-stage-pill" class="fs-stage-pill">
+          <span id="fs-stage-label" class="fs-stage-label">1. Vermelho (R)</span>
+          <button type="button" id="btn-fs-stage-close" class="btn-danger btn-compact">
+            ✕ Sair
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
